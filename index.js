@@ -1,6 +1,12 @@
 const express = require("express")
 const app = express()
 
+// --Configurando o Handlebars 
+// -Para baixar o Handlebars: npm i express-handlebars
+const exphbs=require("express-handlebars")
+app.engine('handlebars', exphbs.engine())
+app.set('view engine', 'handlebars')
+
 app.get("/", (req,res)=>{
     res.send("olá mundo")
 })
