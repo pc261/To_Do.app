@@ -10,6 +10,7 @@
     --bg-header-desktop: url(../imagens/bg-header-desktop-light.png);
     --input-box-shadow: rgba(194, 195, 214, 0.50);
     --input-color: #494c6b;
+    --input-bg: #fff;
     --placeholder-color: #9495A5;
     --button-color: #494c6b ;
     --button-color-hover: #393A4B;
@@ -20,6 +21,26 @@
     --text-color: #494C6B;
     --info-text-color: #9495A5;
     --info-button-hover:#494C6B;
+    --info-button-active:#3A7CFD;
+}
+
+/* arrumando o projeto para que ele mude para o tema dark */
+body.dark{
+    --bg-header-mobile: url(../imagens/bg-header-mobile-dark.png);
+    --bg-header-desktop: url(../imagens/bg-header-desktop-dark.png);
+    --input-box-shadow: rgba(0, 0, 0, 0.50);
+    --input-color: #c8CbE7;
+    --input-bg: #25273d;
+    --placeholder-color: #767992;
+    --button-color: #25273D ;
+    --button-color-hover: #585e7e;
+    --bg-body: #171823;
+    --bg-tarefas: #25273D;
+    --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.50);
+    --border-color: #393a4b;
+    --text-color: #c8cbe7;
+    --info-text-color: #585e7e;
+    --info-button-hover:#e3e4f1;
     --info-button-active:#3A7CFD;
 }
 
@@ -69,6 +90,7 @@ header form input{
     outline: none;
     font-size: 0.75rem;
     color: var(--input-color);
+    background: var(--input-bg);
 }
 
 header form input::placeholder{
