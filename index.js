@@ -3,9 +3,28 @@ const app = express()
 const mysql = require("mysql2")
 
 app.get("/", (req,res)=>{
+    const sql = 'SELECT * FROM tarefas'
+
+    conexao.query(sql,(erro,dados)=>{
+        if (erro) {
+            return console.log(erro)
+        }
+
+        const tarefas = dados.map((dado)=>{
+            // Convertendo cada um dos itens da lista em um objeto que tem true ou false
+            return{
+                id: dado.id,
+                descricao: dado.descricao,
+                completa: dado.completa === 0 ? false : true
+            }
+        })
+
+        
+
+    })
+
     res.render('home')
 })
-
 
 
 // --Configurando o Handlebars 
