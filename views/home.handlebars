@@ -6,11 +6,17 @@
             <div class="tarefa">
 
                 <form action="">
-
-                    <div>
-                        <input type="checkbox" name="" id="tarefa-{{this.id}}">
-                        <label for="tarefa-{{this.id}}">{{this.descricao}}</label>
-                    </div>
+                    {{#if this.completa}}
+                        <div class="completa">
+                            <input type="checkbox" name="" id="tarefa-{{this.id}}" checked >
+                            <label for="tarefa-{{this.id}}">{{this.descricao}}</label>
+                        </div>   
+                    {{else}}
+                        <div>
+                            <input type="checkbox" name="" id="tarefa-{{this.id}}" onchange="completarTarefa({{this.id}})">
+                            <label for="tarefa-{{this.id}}">{{this.descricao}}</label>
+                        </div>
+                    {{/if}}
 
                     <button>
                         <img src="/imagens/x_icon.png" alt="icone com formato da letra X">
