@@ -8,7 +8,7 @@
                 <form action="">
                     {{#if this.completa}}
                         <div class="completa">
-                            <input type="checkbox" name="" id="tarefa-{{this.id}}" checked >
+                            <input type="checkbox" name="" id="tarefa-{{this.id}}" checked onchange="descompletarTarefa({{this.id}})" >
                             <label for="tarefa-{{this.id}}">{{this.descricao}}</label>
                         </div>   
                     {{else}}
@@ -30,7 +30,7 @@
 
         <div class="informacoes">
 
-            <p>5 tarefas ativas</p>
+            <p>{{quantidadeTarefasAtivas}} tarefas ativas</p>
 
             <div class="botoes">
                 <a href="" class="active">Todas</a>
