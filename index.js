@@ -30,6 +30,10 @@ app.get("/", (req,res)=>{
     })
 })
 
+app.get('/ativas', (req,res)=>{
+    
+})
+
 
 // --Configurando o Handlebars 
 // -Para baixar o Handlebars: npm i express-handlebars
