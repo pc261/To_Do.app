@@ -55,6 +55,30 @@ app.get('/ativas', (req,res)=>{
     })
 })
 
+app.get('/completas', (req,res)=>{
+    const sql = `
+        SELECT * FROM tarefas
+        WHERE completa = 1
+    `
+
+    conexao.query(sql, (erro,dados)=>{
+        if (erro){
+            return console.log(erro)
+        }
+
+        const tarefas = dados.map((dado)=>{
+            return{
+                id: dado.id,
+                descricao: dado.descricao,
+                completa: true
+            }
+        })
+
+        const quantidadeTarefas = tarefas.length
+        res.render('completas', { tarefas, quantidadeTarefas})
+    })
+})
+
 
 // --Configurando o Handlebars 
 // -Para baixar o Handlebars: npm i express-handlebars
