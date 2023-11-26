@@ -192,3 +192,16 @@ app.post('/excluir', (req,res)=>{
         res.redirect('/')
     })
 })
+
+app.get('/limparTarefas', (req,res)=>{
+    const sql = `
+        DELETE FROM tarefas
+    `
+    conexao.query(sql, (erro)=>{
+        if (erro){
+            console.log(erro)
+        }
+
+        res.redirect('/')
+    })
+})
